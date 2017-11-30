@@ -3,12 +3,12 @@
         category: 'config',
         defaults: {
             name: {value:'', required: true},
-            consumerKey: {required: true},
-            consumerSecret: {required: true},
+            consumerKey: {value:''},
+            consumerSecret: {value:''},
             callbackUrl: {required: true},
             environment: {value: 'production', required: true},
-            username: {required: true},
-            password: {required: true},
+            username: {value:''},
+            password: {value:''},
         },
         label: function() {
             return this.name || this.username + ' connection';
@@ -50,11 +50,11 @@
     </div>
     <div class="form-row" style="white-space:nowrap">
         <label for="node-config-input-consumerKey"><i class="fa fa-key"></i> Consumer Key</label>
-        <input type="text" id="node-config-input-consumerKey">
+        <input type="text" id="node-config-input-consumerKey" placeholder="msg.sf.consumerKey">
     </div>
     <div class="form-row" style="white-space:nowrap">
         <label for="node-config-input-consumerSecret"><i class="fa fa-user-secret"></i> Consumer Secret</label>
-        <input type="password" id="node-config-input-consumerSecret">
+        <input type="password" id="node-config-input-consumerSecret" placeholder="msg.sf.consumerSecret">
     </div>
     <div class="form-row" style="white-space:nowrap">
         <label for="node-config-input-callbackUrl"><i class="fa fa-history"></i> Callback URL</label>
@@ -69,10 +69,10 @@
     </div>
     <div class="form-row">
         <label for="node-config-input-username"><i class="fa fa-user"></i> Username</label>
-        <input type="text" id="node-config-input-username">
+        <input type="text" id="node-config-input-username" placeholder="msg.sf.username">
     </div>
     <div class="form-row">
         <label for="node-config-input-password"><i class="fa fa-lock"></i> Password</label>
-        <input type="password" id="node-config-input-password">
+        <input type="password" id="node-config-input-password" placeholder="msg.sf.password">
     </div>
 </script>
