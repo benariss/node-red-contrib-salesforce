@@ -5,7 +5,8 @@
         defaults: {
           name: {value:""},
           query: {value:""},
-          connection: {value:"", type:"connection-config", required: true}
+          connection: {value:"", type:"connection-config", required: true},
+          fetchAll: {value:false}
         },
         inputs:1,
         outputs:1,
@@ -28,6 +29,10 @@
     <div class="form-row">
         <label for="node-input-query"><i class="fa fa-database"></i> Query</label>
         <textarea id="node-input-query" style="width:300px"></textarea>
+    </div>
+    <div class="form-row" style="white-space:nowrap">
+        <label for="node-input-fetchAll"><i class="fa fa-list"></i> Fetch all result records</label>
+        <input type="checkbox" id="node-input-fetchAll" style="position:absolute;left:20px">
     </div>
 </script>
 

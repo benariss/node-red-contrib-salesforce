@@ -28,6 +28,7 @@ limit 2
 <li>msg.payload.records - the array of records returned from the query.</li>
 </ul></p>
 <p>The query can be configured in the node, however if left blank, the query should be set in an incoming message on <code>msg.query</code>.</p>
+<p>By default the query will return the first 2,000 records from the query result.  If you wish to return the full result set then tick the 'Fetch All Records' checkbox.</p>
 <p>See the <a href="https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl">Salesforce SOQL documentation</a> for more information.</p>
 
 <h3>SOSL</h3>

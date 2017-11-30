@@ -38,7 +38,7 @@ module.exports = function(RED) {
         node.status({});
       }).error(function(err) {
         node.status({fill:"red",shape:"dot",text:"Error!"});
-        node.error(err);
+        node.error(err, msg);
       });
 
     });

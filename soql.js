@@ -27,7 +27,7 @@ module.exports = function(RED) {
 
       // auth and run query
       org.authenticate({ username: this.connection.username, password: this.connection.password }).then(function(){
-        return org.query({ query: config.query })
+        return org.query({ fetchAll: config.fetchAll, query: config.query });
       }).then(function(results) {
         msg.payload = {
           size: results.totalSize,
@@ -37,7 +37,8 @@ module.exports = function(RED) {
         node.status({});
       }).error(function(err) {
         node.status({fill:"red",shape:"dot",text:"Error!"});
-        node.error(err);
+        node.log("Inside error catch block");
+        node.error(err, msg);
       });
 
     });
