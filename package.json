@@ -1,14 +1,21 @@
 {
-  "name": "node-red-contrib-salesforce",
+  "name": "node-red-contrib-salesforce-bp3",
   "version": "0.0.6",
-  "description": "A set of Node-RED nodes to interact with Salesforce and Force.com.",
+  "description": "A set of Node-RED nodes to interact with Salesforce and Force.com.  A Fork from @jeffdonthemic node-red-contrib-salesforce",
   "author": {
     "name": "Jeff Douglas",
     "url": "http://blog.jeffdouglas.com"
   },
+  "contributors": [
+    {
+      "name": "Ben Ariss",
+      "url": "http://www.bp-3.com",
+      "email": "bariss@bp-3.com"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/jeffdonthemic/node-red-contrib-salesforce.git"
+    "url": "git://github.com/benariss/node-red-contrib-salesforce-bp3"
   },
   "keywords": [
     "node-red",
