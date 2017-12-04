@@ -12,7 +12,6 @@ module.exports = function(RED) {
       // show initial status of progress
       node.status({fill:"green",shape:"ring",text:"connecting...."});
 
-      this.log("config.query = " + config.query);
       // use msg query if node's query is blank
       if (msg.hasOwnProperty("query") && config.query === '') {
         query = msg.query;
