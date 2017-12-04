@@ -6,14 +6,18 @@ module.exports = function(RED) {
     RED.nodes.createNode(this,config);
     this.connection = RED.nodes.getNode(config.connection);
     var node = this;
+    var query = '';
     this.on('input', function(msg) {
 
       // show initial status of progress
       node.status({fill:"green",shape:"ring",text:"connecting...."});
 
+      this.log("config.query = " + config.query);
       // use msg query if node's query is blank
       if (msg.hasOwnProperty("query") && config.query === '') {
-        config.query = msg.query;
+        query = msg.query;
+      } else {
+        query = config.query;
       }
 
       // create connection object
@@ -27,7 +31,7 @@ module.exports = function(RED) {
 
       // auth and run query
       org.authenticate({ username: this.connection.username, password: this.connection.password }).then(function(){
-        return org.query({ fetchAll: config.fetchAll, query: config.query });
+        return org.query({ fetchAll: config.fetchAll, query: query });
       }).then(function(results) {
         msg.payload = {
           size: results.totalSize,
